@@ -1,0 +1,35 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Basic</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+   <h1>Learning Responsive Webpage Basic</h1>
+   <h2>Using HTML, CSS and Javascipt</h2>
+
+   <div id="date">
+
+   </div>
+   <script src="index.js" charset="utf-8">
+
+  </script>
+  </body>
+</html>
+
+CSS
+#date {
+    text-align:center;
+    padding: 12% 0;
+}
+
+Javascipt
+
+var time = new Date();
+
+document.getElementById('date').innerHTML = time;
+
+alert("Displaying System Time");
