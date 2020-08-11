@@ -1,0 +1,41 @@
+HTML
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body>
+         <p>BMI Calculator</p>
+
+        <button type="button" name="button" onclick="BMI()">Calculate you BMI</button>
+
+        <script src="index.js" charset="utf-8">
+
+
+      </script>
+
+  </body>
+</html>
+
+CSS
+
+
+body {
+  background-color: #48E1D9;
+}
+
+
+Javascript
+
+function BMI()  {
+
+var x = prompt("Please enter your weight in KGs");
+
+var y = prompt("Please enter your height in Centimeters");
+
+alert(x/(y*y));
+
+};
