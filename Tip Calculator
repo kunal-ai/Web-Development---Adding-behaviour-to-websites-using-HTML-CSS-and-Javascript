@@ -1,0 +1,106 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>This is a tip calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="headn">
+      <h1>TIP CALCULATOR</h1>
+    </div>
+
+<div id="calculator">
+  <label>Total Bill Amount (Rupees)</label><input id="bill-amt"></br>
+  <label>Tip %</label><input id="percent-tip"></br>
+  <label>Total Tip</label><input id="tip-amt"></br>
+  <label>Total Bill</label><input id="total"></br>
+  <button id="calc">Calculate Tip</button></br>
+</div>
+<div id="TipDisplay">
+  <p id="finalPay">Please enter the bill amount and tip</p>
+
+</div>
+  <script src="index.js" charset="utf-8"></script>
+
+  </body>
+</html>
+
+CSS
+
+.headn {
+  font-family: 'Russo One', sans-serif;
+  background-color: red;
+  width: 360px;
+  margin: auto;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#calculator {
+  font-family: 'Russo One', sans-serif;
+    font-size: 30px;
+    width: 900px;
+    background-color: grey;
+    margin: auto;
+    padding: 50px;
+    text-align: center;
+}
+
+label{
+    display:inline-grid;
+    width: 450px;
+
+}
+
+input{
+  font-family: 'Russo One', sans-serif;
+    width: 150px;
+    height: 35px;
+    text-align: center;
+}
+
+#calc{
+   font-family: 'Russo One', sans-serif;
+    background-color: lightgreen;
+    font-size: 25px;
+    width: 190px;
+    height: 35px;
+    margin: 25px 200px 15px 200px;
+}
+
+#TipDisplay {
+  font-family: 'Russo One', sans-serif;
+  background-color: lightblue;
+  border-radius: 15px;
+  margin: auto;
+  font-size: 35px;
+  width: 800px;
+  height: 40px;
+  text-align: center;
+}
+
+Javascript
+
+let billAmt = document.getElementById('bill-amt');
+let percentTip = document.getElementById('percent-tip');
+let tipAmount = document.getElementById('tip-amt');
+let total = document.getElementById('total');
+let calculate = document.getElementById('calc');
+
+calculate.addEventListener('click', function(){
+  billAmt = Number(billAmt.value);
+  percentTip = Number(percentTip.value);
+  let calculatedTip =  percentTip/100*billAmt;
+  tipAmount.value = Number(calculatedTip).toFixed(2) + ' Rupees';
+  let calculatedTotal = billAmt + calculatedTip;
+  total.value = Number(calculatedTotal).toFixed(2) + ' Rupees';
+  document.getElementById("finalPay").innerHTML = "Please pay the total bill " + total.value;
+  document.getElementById("finalPay").style.backgroundColor = "red";
+  document.getElementById("finalPay").style.borderRadius = "15px";
+})
